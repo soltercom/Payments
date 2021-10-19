@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.spb.altercom.payments.ui.summary.SummaryTableView">
+    <children>
+      <VBox AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox>
+               <children>
+                  <MenuButton mnemonicParsing="false" text="Actions">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onAddPerson" text="Add Person" />
+                    </items>
+                  </MenuButton>
+                  <HBox spacing="5.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onPrevWeek" text="&lt;&lt;" />
+                        <Button mnemonicParsing="false" onAction="#onNextWeek" text="&gt;&gt;" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+              <TableView fx:id="summaryTable" onMouseClicked="#onMouseClicked">
+                  <columns>
+                      <TableColumn fx:id="personColumn" minWidth="200.0" prefWidth="200.0" text="Person" />
+                  <TableColumn fx:id="openingBalanceColumn" minWidth="100.0" prefWidth="100.0" text="Balance" />
+                  <TableColumn fx:id="day1Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="18.10.2021" />
+                  <TableColumn fx:id="day2Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="19.10.2021" />
+                  <TableColumn fx:id="day3Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="20.10.2021" />
+                  <TableColumn fx:id="day4Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="21.10.2021" />
+                  <TableColumn fx:id="day5Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="22.10.2021" />
+                  <TableColumn fx:id="day6Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="23.10.2021" />
+                  <TableColumn fx:id="day7Column" minWidth="100.0" prefWidth="100.0" sortable="false" text="24.10.2021" />
+                  <TableColumn fx:id="closingBalanceColumn" minWidth="100.0" prefWidth="100.0" text="Balance" />
+                  </columns>
+              </TableView>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>

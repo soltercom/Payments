@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'ru.spb.altercom'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.8.1'
+}
+
+sourceCompatibility = '15'
+targetCompatibility = '15'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+mainClassName = 'ru.spb.altercom.payments.MainApp'
+
+javafx {
+    version = '15.0.1'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    implementation "com.h2database:h2:1.4.200"
+    implementation "com.zaxxer:HikariCP:3.4.3"
+
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.spb.altercom.payments.ui.maincontainer.MainContainerView">
+   <children>
+      <fx:include fx:id="summaryTableView" source="SummaryTableView.fxml" />
+   </children>
+</AnchorPane>
